@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'app',
     'phonenumber_field',
+    'buyer',
 ]
 
 MIDDLEWARE = [

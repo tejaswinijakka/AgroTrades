@@ -25,5 +25,6 @@ urlpatterns = [
     path('app/',include('app.urls',namespace = 'app')),
     path('app/',include('django.contrib.auth.urls')),
     path('test/',views.TestPage.as_view(), name = 'test'),
-    path('thanks/',views.ThanksPage.as_view(), name = 'thanks')
+    path('thanks/',views.ThanksPage.as_view(), name = 'thanks'),
+    path('search_result/',views.search_result.as_view(), name = 'Search-Result'),
 ]

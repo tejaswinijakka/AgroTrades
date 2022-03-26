@@ -2,6 +2,11 @@
 from django.urls import reverse, reverse_lazy
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
+from django.shortcuts import render
+
+class search_result(TemplateView):
+    #return render(request, 'buyer/search_result.html', {})
+    template_name = 'search_result.html'
 
 class HomePage(TemplateView):
     template_name = "index.html"

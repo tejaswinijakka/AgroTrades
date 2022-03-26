@@ -26,12 +26,21 @@
             <a class = 'navbar-brand mynav' href="{% url 'home' %}">AgroTrades</a>
             <ul class="nav navbar-nav navbar-right">
                 {% if user.is_authenticated %}
-                
+                <form class = "d-flex" method=POST action="/search_result/">
+                    {% csrf_token %}
+                      <li><input class = "form-contol me-2" type = "search" placeholder="Search" aria-label="Search"></li>
+                      <li><button class = "btn btn-outline-secondary" type = "Submit">Search</button></li>
+                </form>
                       <li><a href="#" class="btn btn-simple">Post</a></li>
                       <li><a href="#" class="btn btn-simple">ViewItems</a></li>
                       <li><a href="#" class="btn btn-simple">Cart</a></li>
                       <li><a href="{% url 'app:logout' %}" class="btn btn-simple">Log out</a></li>
                 {% else %}
+                <form class = "d-flex" method=POST action="/search_result/">
+                {% csrf_token %}
+                      <li><input class = "form-contol me-2" type = "search" placeholder="Search" aria-label="Search"></li>
+                      <li><button class = "btn btn-outline-secondary" type = "Submit">Search</button></li>
+                </form>
                       <li><a href="#"class="btn btn-simple">ViewItems</a></li>
                       <li><a href="{% url 'app:login' %}" class="btn btn-simple">Log in</a></li>
                       <li><a href="{% url 'app:signup' %}" class="btn btn-simple">Sign up</a></li>
